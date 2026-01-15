@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Invernadero — Mockup</title>
+  <style>
+    :root{--gap:8px;--card-pad:8px;--muted:#666}
+    body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:10px;background:#f6f7f8;color:#111}
+    h1{margin:6px 0 10px 0;font-size:1.1rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap)}
+    .card{border:1px solid #e3e6e8;padding:var(--card-pad);border-radius:6px;background:#fff;margin:0}
+    .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    button{padding:5px 8px;border-radius:4px;border:1px solid #bfbfbf;background:#fafafa;font-size:0.9rem}
+    table{border-collapse:collapse;width:100%;font-size:0.9rem}
+    th,td{border:1px solid #eef0f1;padding:6px;text-align:left}
+    .small{font-size:0.85rem;color:var(--muted)}
+    ul#relaysList{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding-left:0;list-style:none;margin:0}
+    ul#relaysList li{background:#fbfbfb;padding:6px;border-radius:4px;display:flex;justify-content:space-between;align-items:center}
+    #historyTbl tbody{max-height:220px;display:block;overflow:auto}
+    #historyTbl thead, #historyTbl tbody tr{display:table;width:100%;table-layout:fixed}
+    #schedTbl tbody{max-height:180px;display:block;overflow:auto}
+    input{padding:4px;border:1px solid #d0d4d6;border-radius:4px}
+  </style>
+</head>
+<body>
+  <h1>Invernadero — Control (Mockup)</h1>
+
+  <div class="grid">
+  <div class="card">
+    <h3>Relays</h3>
+    <ul id="relaysList"></ul>
+
+  </div>
+
+  <div class="card">
+    <h3>Luces</h3>
+    <div class="row">
+      <div id="lightsState">Estado: <strong>APAGADO</strong></div>
+      <button id="toggleLights">Alternar</button>
+      <div class="small">Min diario: <input id="minHours" size=4 value="12.0"> h</div>
+      <div class="small">Acumulado hoy: <span id="accum">5.25</span> h</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Temperatura</h3>
+    <div>Interior: <span id="inTemp">24.6</span> °C, <span id="inHum">55</span>%</div>
+    <div>Exterior: <span id="outTemp">18.2</span> °C, <span id="outHum">68</span>%</div>
+  </div>
+
+  <div class="card">
+    <h3>Termostato</h3>
+    <div class="row"><div>Temp actual: <strong id="tTemp">24.6</strong> °C</div>
+    <div class="small">Setpoint: <input id="tSet" size=4 value="23.0"> °C</div>
+    <div class="small">Hyst: <input id="tHyst" size=3 value="0.5"> °C</div>
+    <button id="saveTherm">Guardar</button></div>
+  </div>
+
+  <div class="card">
+    <h3>Automatización</h3>
+    <div class="small">Riego (veces/duración/inicio): <input id="irCount" size=2 value="3"> / <input id="irDur" size=3 value="60"> s / <input id="irStart" size=2 value="6">h <button id="saveIrr">Guardar</button></div>
+    <div style="margin-top:8px">O tiempos explícitos CSV (HH:MM): <input id="irTimes" size=20 value="06:00,12:00,18:00"> <button id="setIrrTimes">Fijar tiempos</button></div>
+  </div>
+
+  <div class="card">
+    <h3>Historial de luz (últimos días)</h3>
+    <div class="small">Guardado localmente (mock). Retiene hasta 120 días.</div>
+    <table id="historyTbl" style="margin-top:8px">
+      <thead><tr><th>Fecha</th><th>Horas</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Horarios</h3>
+    <table id="schedTbl"><thead><tr><th>#</th><th>CH</th><th>Hora</th><th>Min</th><th>Acción</th><th>Activado</th><th>Días</th></tr></thead><tbody></tbody></table>
+    <div style="margin-top:8px">Agregar: CH <select id="addCh"><option value="2">2 (Luces)</option><option value="3">3 (Riego)</option></select> Hora <input id="addH" size=2> Min <input id="addM" size=2> Acción <select id="addOn"><option value="1">Encender</option><option value="0">Apagar</option></select> <button id="addSched">Añadir</button></div>
+  </div>
+
+<script>
+// Mock data
+let relays = [false,true,false,false,false,false];
+let history = [];
+(function seedHistory(){
+  let d = new Date();
+  for(let i=0;i<14;i++){ let copy = new Date(d); copy.setDate(d.getDate()-i); history.push({date: copy.toISOString().slice(0,10), hours: (i===0?5.25:12.0)}); }
+})();
+let schedules = [{ch:2,hour:7,minute:0,on:1,enabled:1,days:0x3E},{ch:3,hour:6,minute:0,on:1,enabled:1,days:0x7F}];
+
+function renderRelays(){
+  const ul = document.getElementById('relaysList'); ul.innerHTML='';
+  for(let i=0;i<6;i++){
+    let li = document.createElement('li');
+    li.textContent = `CH${i+1}: ${relays[i]? 'ENCENDIDO':'APAGADO'}`;
+    let btn = document.createElement('button'); btn.textContent='Alternar'; btn.onclick = ()=>{ relays[i]=!relays[i]; renderRelays(); };
+    li.appendChild(document.createTextNode(' ')); li.appendChild(btn); ul.appendChild(li);
+  }
+}
+function renderHistory(){
+  const tb = document.querySelector('#historyTbl tbody'); tb.innerHTML='';
+  history.forEach(h=>{ let r = document.createElement('tr'); r.innerHTML=`<td>${h.date}</td><td>${h.hours.toFixed(2)}</td>`; tb.appendChild(r); });
+}
+function renderSchedules(){
+  const tb = document.querySelector('#schedTbl tbody'); tb.innerHTML='';
+  schedules.forEach((s,i)=>{ let r=document.createElement('tr'); r.innerHTML=`<td>${i}</td><td>${s.ch}</td><td>${s.hour}</td><td>${s.minute}</td><td>${s.on? 'Encender':'Apagar'}</td><td>${s.enabled? 'Sí':'No'}</td><td>${s.days}</td>`; tb.appendChild(r); });
+}
+
+document.getElementById('toggleLights').addEventListener('click', ()=>{ relays[1]=!relays[1]; document.getElementById('lightsState').querySelector('strong').textContent = relays[1]? 'ENCENDIDO':'APAGADO'; renderRelays(); });
+
+document.getElementById('setIrrTimes').addEventListener('click', ()=>{ alert('En el firmware esto enviaría la cadena al endpoint /automation?action=setIrrTimes'); });
+
+document.getElementById('saveIrr').addEventListener('click', ()=>{ alert('Guardar configuración de riego (mock)'); });
+
+document.getElementById('addSched').addEventListener('click', ()=>{ let ch=parseInt(document.getElementById('addCh').value); let h=parseInt(document.getElementById('addH').value)||0; let m=parseInt(document.getElementById('addM').value)||0; let on=parseInt(document.getElementById('addOn').value); schedules.push({ch,hour:h,minute:m,on,enabled:1,days:0x7F}); renderSchedules(); });
+
+renderRelays(); renderHistory(); renderSchedules();
+</script>
+</body>
+</html>

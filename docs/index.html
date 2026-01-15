@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Greenhouse Live</title>
+  <style>body{font-family:sans-serif;margin:16px} #log{white-space:pre-wrap;background:#f7f7f7;padding:12px;border:1px solid #ddd;max-height:60vh;overflow:auto}</style>
+</head>
+<body>
+  <h1>Greenhouse live feed</h1>
+  <p>Conectado al broker público HiveMQ (broker.hivemq.com) por WebSockets.</p>
+  <div id="status">Estado: <strong id="st">desconocido</strong></div>
+  <h2>Mensajes</h2>
+  <div id="log">Esperando mensajes...</div>
+
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script>
+    const log = document.getElementById('log');
+    const st = document.getElementById('st');
+    const brokerUrl = 'wss://broker.hivemq.com:8884/mqtt';
+    // public websockets: use ws://broker.hivemq.com:8000/mqtt or wss on 8884
+    const client = mqtt.connect(brokerUrl, {connectTimeout: 4000});
+
+    client.on('connect', () => {
+      st.innerText = 'conectado';
+      // subscribe to all greenhouse device topics
+      client.subscribe('greenhouse/+/status', (err) => {
+        if (!err) append('Subscribed to greenhouse/+/status');
+      });
+    });
+    client.on('reconnect', () => st.innerText = 'reconectando');
+    client.on('disconnect', () => st.innerText = 'desconectado');
+    client.on('error', (e) => { append('ERROR: ' + e.toString()); client.end(); st.innerText='error'; });
+
+    client.on('message', (topic, message) => {
+      const ts = new Date().toLocaleString();
+      append('['+ts+'] ' + topic + ' -> ' + message.toString());
+    });
+
+    function append(s) {
+      if (log.innerText.indexOf('Esperando') === 0) log.innerText = '';
+      log.innerText = s + '\n' + log.innerText;
+    }
+  </script>
+</body>
+</html>
