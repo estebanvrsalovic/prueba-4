@@ -12,7 +12,9 @@
 #include "automation.h"
 // MQTT
 #include <WiFi.h>
+#include <WiFiClientSecure.h>
 #include <PubSubClient.h>
+#include <ArduinoJson.h>
 
 // NeoPixel config
 // LED module
@@ -20,15 +22,44 @@
 #include "serial_utils.h"
 
 // MQTT globals
-static WiFiClient _wifiClient;
+static WiFiClientSecure _wifiClient;
 static PubSubClient _mqttClient(_wifiClient);
 static const char* MQTT_SERVER = "broker.hivemq.com";
-static const uint16_t MQTT_PORT = 1883;
+static const uint16_t MQTT_PORT = 8883; // TLS
 
-static String mqttTopicPrefix() {
+static String mqttBaseTopic() {
   String mac = WiFi.macAddress();
   mac.replace(":", "");
-  return String("greenhouse/") + mac + String("/status");
+  return String("greenhouse/") + mac;
+}
+
+static String mqttTopicPrefix() {
+  return mqttBaseTopic() + String("/status");
+}
+
+// MQTT incoming message handler
+static void mqttCallback(char* topic, byte* payload, unsigned int length) {
+  String msg;
+  for (unsigned int i = 0; i < length; ++i) msg += (char)payload[i];
+  logPrint(String("MQTT RX [") + String(topic) + "] " + msg);
+  // try parse JSON
+  DynamicJsonDocument doc(256);
+  DeserializationError err = deserializeJson(doc, msg);
+  if (err) return;
+  const char* cmd = doc["cmd"];
+  if (!cmd) return;
+  String scmd = String(cmd);
+  if (scmd == "relay") {
+    int ch = doc["ch"] | 0;
+    const char* s = doc["state"];
+    if (s) {
+      String st = String(s);
+      if (st == "on") setRelay(ch, true);
+      else if (st == "off") setRelay(ch, false);
+      else if (st == "toggle") setRelay(ch, !getRelay(ch));
+    }
+  }
+  // add more commands as needed
 }
 
 static void mqttEnsureConnected() {
@@ -38,6 +69,9 @@ static void mqttEnsureConnected() {
   clientId.replace(":", "");
   if (_mqttClient.connect(clientId.c_str())) {
     logPrintln(String("MQTT connected"));
+    // subscribe to command topic for this device
+    String cmdTopic = mqttBaseTopic() + String("/cmd");
+    _mqttClient.subscribe(cmdTopic.c_str());
   } else {
     logPrint(String("MQTT connect failed, rc=")); logPrintln(String(_mqttClient.state()));
   }
@@ -87,7 +121,10 @@ void setup() {
   schedulerBegin();
 
   // MQTT init
+  // Allow insecure TLS (skip cert validation) for public broker demonstration
+  _wifiClient.setInsecure();
   _mqttClient.setServer(MQTT_SERVER, MQTT_PORT);
+  _mqttClient.setCallback(mqttCallback);
 
   logPrintln(String("Initialization complete"));
 }

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Greenhouse Dashboard (MQTT over WebSockets)</title>
+  <style>
+    body{font-family:Segoe UI,Roboto,Arial;margin:16px;background:#f7f9fc;color:#111}
+    header{display:flex;align-items:center;gap:12px}
+    .status{padding:6px 10px;border-radius:6px}
+    .connected{background:#e6ffed;border:1px solid #b7f0c3}
+    .disconnected{background:#fff2f2;border:1px solid #f0b7b7}
+    #messages{height:300px;overflow:auto;background:#fff;padding:12px;border-radius:6px;border:1px solid #ddd}
+    .msg{padding:6px 8px;border-bottom:1px solid #eee}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    input,button,select,textarea{padding:8px;border-radius:6px;border:1px solid #ccc}
+    button{cursor:pointer}
+    .card{background:#fff;padding:12px;border-radius:6px;border:1px solid #ddd;margin-top:12px}
+    label{display:block;font-size:13px;margin-bottom:6px}
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Greenhouse Dashboard</h2>
+    <div id="conn" class="status disconnected">Desconectado</div>
+  </header>
+
+  <div class="card">
+    <label>Broker WebSocket URL</label>
+    <input id="brokerUrl" value="wss://broker.hivemq.com:8884/mqtt" style="width:60%" />
+    <label style="margin-top:8px">Device ID (para enviar comandos)</label>
+    <input id="deviceId" placeholder="ej: greenhouse-01" />
+    <div class="controls">
+      <button id="btnConnect">Conectar</button>
+      <button id="btnSubscribeAll">Suscribir a all (greenhouse/+/sensor)</button>
+      <button id="btnClear">Limpiar mensajes</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Mensajes (suscritos)</h3>
+    <div id="messages"></div>
+  </div>
+
+  <div class="card">
+    <h3>Enviar comando al dispositivo</h3>
+    <label>Comando JSON</label>
+    <textarea id="cmdPayload" rows="4">{"cmd":"toggle_relay","relay":1}</textarea>
+    <div class="controls">
+      <button id="btnSendCmd">Enviar comando</button>
+      <button id="btnSendRetained">Enviar retenido (retained)</button>
+    </div>
+    <p style="font-size:13px;color:#666">El topic usado: <code id="topicExample"></code></p>
+  </div>
+
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script>
+    const connEl = document.getElementById('conn');
+    const brokerInput = document.getElementById('brokerUrl');
+    const btnConnect = document.getElementById('btnConnect');
+    const messagesEl = document.getElementById('messages');
+    const deviceIdInput = document.getElementById('deviceId');
+    const btnSendCmd = document.getElementById('btnSendCmd');
+    const btnSendRetained = document.getElementById('btnSendRetained');
+    const topicExample = document.getElementById('topicExample');
+
+    let client = null;
+
+    function setStatus(connected){
+      connEl.textContent = connected ? 'Conectado' : 'Desconectado';
+      connEl.className = 'status ' + (connected ? 'connected' : 'disconnected');
+    }
+
+    function logMsg(t, payload){
+      const d = document.createElement('div');
+      d.className = 'msg';
+      const time = new Date().toLocaleTimeString();
+      d.innerHTML = `<strong>${t}</strong> <span style=\"color:#666\">[${time}]</span><pre style=\"margin:6px 0 0 0\">${escapeHtml(payload)}</pre>`;
+      messagesEl.prepend(d);
+    }
+
+    function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    btnConnect.onclick = ()=>{
+      if (client && client.connected) { client.end(true); client = null; setStatus(false); btnConnect.textContent='Conectar'; return; }
+      const broker = brokerInput.value.trim();
+      if (!broker) return alert('Introduce broker WebSocket URL');
+      // clientId random
+      const clientId = 'webclient_' + Math.random().toString(16).substr(2,8);
+      client = mqtt.connect(broker, {clientId, keepalive:30, reconnectPeriod:2000, connectTimeout:4000});
+
+      client.on('connect', ()=>{ setStatus(true); btnConnect.textContent='Desconectar'; logMsg('SYSTEM','Conectado al broker ' + broker); });
+      client.on('reconnect', ()=> logMsg('SYSTEM','Reintentando conexión...'));
+      client.on('offline', ()=> setStatus(false));
+      client.on('error', (err)=> { logMsg('ERROR', String(err)); });
+      client.on('close', ()=> { setStatus(false); logMsg('SYSTEM','Conexión cerrada'); });
+      client.on('message', (topic, message)=>{ try{ logMsg(topic, message.toString()); }catch(e){ logMsg('PARSE_ERROR', message.toString()); } });
+    };
+
+    document.getElementById('btnSubscribeAll').onclick = ()=>{
+      if (!client || !client.connected) return alert('Conéctate primero al broker');
+      const topic = 'greenhouse/+/sensor';
+      client.subscribe(topic, {qos:0}, (err, granted)=>{ if (err) logMsg('ERROR', String(err)); else logMsg('SYSTEM', 'Suscrito a ' + topic); });
+    };
+
+    document.getElementById('btnClear').onclick = ()=> messagesEl.innerHTML = '';
+
+    btnSendCmd.onclick = ()=>{
+      if (!client || !client.connected) return alert('Conéctate primero');
+      const deviceId = deviceIdInput.value.trim();
+      if (!deviceId) return alert('Introduce Device ID');
+      const topic = `greenhouse/${deviceId}/cmd`;
+      const payload = document.getElementById('cmdPayload').value;
+      try{ JSON.parse(payload); } catch(e){ if(!confirm('Payload no es JSON válido. Enviar de todas formas?')) return; }
+      client.publish(topic, payload, {qos:0, retain:false}, (err)=>{ if(err) logMsg('ERROR', String(err)); else logMsg('SENT', `Topic: ${topic}\n${payload}`); });
+    };
+
+    btnSendRetained.onclick = ()=>{
+      if (!client || !client.connected) return alert('Conéctate primero');
+      const deviceId = deviceIdInput.value.trim();
+      if (!deviceId) return alert('Introduce Device ID');
+      const topic = `greenhouse/${deviceId}/cmd`;
+      const payload = document.getElementById('cmdPayload').value;
+      client.publish(topic, payload, {qos:1, retain:true}, (err)=>{ if(err) logMsg('ERROR', String(err)); else logMsg('SENT', `Retained: ${topic}\n${payload}`); });
+    };
+
+    // Example topic preview
+    setInterval(()=>{
+      const id = deviceIdInput.value.trim() || '<device-id>';
+      topicExample.textContent = `greenhouse/${id}/cmd`;
+    }, 500);
+
+    // Auto connect on page load (optional)
+    // btnConnect.click();
+  </script>
+</body>
+</html>

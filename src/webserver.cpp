@@ -72,6 +72,46 @@ static void sendResponse(WiFiClient &client, const char* contentType, const Stri
 
 // Very small URL parser for GET path and query
 static void handleRequest(WiFiClient &client, const String &path) {
+  // Serve onboard MQTT dashboard (prefer SPIFFS file, fallback to embedded)
+  if (path == "/mqtt" || path == "/dashboard") {
+    if (SPIFFS.exists("/web_dashboard.html")) {
+      File f = SPIFFS.open("/web_dashboard.html", "r");
+      if (f) {
+        client.print("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n");
+        client.print("Connection: close\r\n\r\n");
+        while (f.available()) client.write(f.read());
+        f.close();
+        return;
+      }
+    }
+    // embedded fallback (small mqtt.js dashboard)
+    String page = R"RAW(<!doctype html>
+<html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Greenhouse MQTT Dashboard</title>
+</head><body>
+<h2>Greenhouse Dashboard (via broker WebSockets)</h2>
+<div>Broker: <input id="broker" value="wss://broker.hivemq.com:8884/mqtt" size=40/></div>
+<div>Device ID: <input id="deviceId" placeholder="greenhouse-01"/></div>
+<div><button id="btn">Connect</button> <button id="subAll">Subscribe greenhouse/+/sensor</button></div>
+<pre id="out" style="height:300px;overflow:auto;border:1px solid #ccc;padding:8px"></pre>
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script>
+let client=null; function log(t){ let o=document.getElementById('out'); o.textContent = t + "\n" + o.textContent; }
+document.getElementById('btn').onclick = ()=>{
+  if (client && client.connected) { client.end(true); client=null; log('Disconnected'); return; }
+  const url = document.getElementById('broker').value;
+  const clientId = 'web_'+Math.random().toString(16).slice(2,10);
+  client = mqtt.connect(url, {clientId, keepalive:30, reconnectPeriod:2000, connectTimeout:4000});
+  client.on('connect', ()=>log('Connected to '+url));
+  client.on('error', e=>log('ERR:'+e));
+  client.on('message', (t,m)=>{ log(t+" => "+m.toString()); });
+}
+document.getElementById('subAll').onclick = ()=>{ if(!client||!client.connected) return alert('Connect first'); client.subscribe('greenhouse/+/sensor'); log('Subscribed to greenhouse/+/sensor'); }
+</script>
+</body></html>)RAW";
+    sendResponse(client, "text/html", page);
+    return;
+  }
   if (path == "/" || path == "") {
     // Dynamic UI: relays + schedules (fetched by JS)
     String page = "<html><head><meta name=viewport content='width=device-width, initial-scale=1'/>";

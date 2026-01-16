@@ -1,0 +1,1546 @@
+=== STORED LOGS BEGIN ===
+5550: === Greenhouse app starting ===
+5554: Build: 
+5558: Thu Jan 15 21:16:24 2026
+10869: Connecting to WiFi '
+10873: Redmi 9T
+10877: '...
+10888: Static IP configured
+11100: .
+11104: WiFi connected, IP: 
+11108: 192.168.1.50
+11117: Web server started on port 80
+11203: Initialization complete
+26250: Uptime: 00:00:26
+33231: MQTT connect failed, rc=
+33235: -2
+40231: MQTT connect failed, rc=
+40235: -2
+55282: Uptime: 00:00:55
+62233: MQTT connect failed, rc=
+62237: -2
+69234: MQTT connect failed, rc=
+69238: -2
+84286: Uptime: 00:01:24
+91237: MQTT connect failed, rc=
+91241: -2
+98237: MQTT connect failed, rc=
+98241: -2
+113288: Uptime: 00:01:53
+120240: MQTT connect failed, rc=
+120244: -2
+127241: MQTT connect failed, rc=
+127245: -2
+142292: Uptime: 00:02:22
+149244: MQTT connect failed, rc=
+149248: -2
+156244: MQTT connect failed, rc=
+156248: -2
+171295: Uptime: 00:02:51
+178246: MQTT connect failed, rc=
+178250: -2
+185248: MQTT connect failed, rc=
+185252: -2
+200299: Uptime: 00:03:20
+207251: MQTT connect failed, rc=
+207256: -2
+214251: MQTT connect failed, rc=
+214255: -2
+229302: Uptime: 00:03:49
+236253: MQTT connect failed, rc=
+236257: -2
+243255: MQTT connect failed, rc=
+243259: -2
+258306: Uptime: 00:04:18
+265259: MQTT connect failed, rc=
+265263: -2
+272259: MQTT connect failed, rc=
+272264: -2
+287311: Uptime: 00:04:47
+294260: MQTT connect failed, rc=
+294264: -2
+301262: MQTT connect failed, rc=
+301266: -2
+316313: Uptime: 00:05:16
+323266: MQTT connect failed, rc=
+323270: -2
+330267: MQTT connect failed, rc=
+330272: -2
+345319: Uptime: 00:05:45
+352269: MQTT connect failed, rc=
+352273: -2
+359271: MQTT connect failed, rc=
+359275: -2
+374323: Uptime: 00:06:14
+381274: MQTT connect failed, rc=
+381278: -2
+388274: MQTT connect failed, rc=
+388278: -2
+403325: Uptime: 00:06:43
+410276: MQTT connect failed, rc=
+410280: -2
+417278: MQTT connect failed, rc=
+417282: -2
+432329: Uptime: 00:07:12
+439281: MQTT connect failed, rc=
+439285: -2
+446281: MQTT connect failed, rc=
+446285: -2
+461323: Uptime: 00:07:41
+468283: MQTT connect failed, rc=
+468288: -2
+475285: MQTT connect failed, rc=
+475289: -2
+490336: Uptime: 00:08:10
+497289: MQTT connect failed, rc=
+497293: -2
+504290: MQTT connect failed, rc=
+504295: -2
+519342: Uptime: 00:08:39
+526292: MQTT connect failed, rc=
+526296: -2
+533294: MQTT connect failed, rc=
+533298: -2
+548345: Uptime: 00:09:08
+555298: MQTT connect failed, rc=
+555302: -2
+562298: MQTT connect failed, rc=
+562302: -2
+577349: Uptime: 00:09:37
+584301: MQTT connect failed, rc=
+584305: -2
+591303: MQTT connect failed, rc=
+591308: -2
+606355: Uptime: 00:10:06
+613306: MQTT connect failed, rc=
+613310: -2
+620306: MQTT connect failed, rc=
+620310: -2
+635358: Uptime: 00:10:35
+642308: MQTT connect failed, rc=
+642312: -2
+649310: MQTT connect failed, rc=
+649314: -2
+664362: Uptime: 00:11:04
+671314: MQTT connect failed, rc=
+671318: -2
+678314: MQTT connect failed, rc=
+678318: -2
+693366: Uptime: 00:11:33
+700316: MQTT connect failed, rc=
+700320: -2
+707318: MQTT connect failed, rc=
+707322: -2
+722369: Uptime: 00:12:02
+729322: MQTT connect failed, rc=
+729326: -2
+736322: MQTT connect failed, rc=
+736326: -2
+751373: Uptime: 00:12:31
+758324: MQTT connect failed, rc=
+758328: -2
+765326: MQTT connect failed, rc=
+765330: -2
+780377: Uptime: 00:13:00
+787329: MQTT connect failed, rc=
+787334: -2
+794329: MQTT connect failed, rc=
+794333: -2
+809380: Uptime: 00:13:29
+816331: MQTT connect failed, rc=
+816335: -2
+823333: MQTT connect failed, rc=
+823337: -2
+838384: Uptime: 00:13:58
+845335: MQTT connect failed, rc=
+845339: -2
+852335: MQTT connect failed, rc=
+852340: -2
+867387: Uptime: 00:14:27
+874337: MQTT connect failed, rc=
+874341: -2
+881339: MQTT connect failed, rc=
+881343: -2
+5386: === Greenhouse app starting ===
+5390: Build: 
+5394: Thu Jan 15 21:16:24 2026
+10705: Connecting to WiFi '
+10710: Redmi 9T
+10716: '...
+10728: Static IP configured
+10937: .
+11144: .
+11351: .
+11558: .
+11765: .
+11972: .
+11976: WiFi connected, IP: 
+11981: 192.168.1.50
+11989: Web server started on port 80
+12074: Initialization complete
+27121: Uptime: 00:00:27
+33662: MQTT connect failed, rc=
+33666: -2
+40662: MQTT connect failed, rc=
+40666: -2
+55713: Uptime: 00:00:55
+62663: MQTT connect failed, rc=
+62667: -2
+69663: MQTT connect failed, rc=
+69667: -2
+84714: Uptime: 00:01:24
+91666: MQTT connect failed, rc=
+91671: -2
+98667: MQTT connect failed, rc=
+98671: -2
+113718: Uptime: 00:01:53
+120670: MQTT connect failed, rc=
+120674: -2
+127670: MQTT connect failed, rc=
+127674: -2
+142721: Uptime: 00:02:22
+149672: MQTT connect failed, rc=
+149676: -2
+156674: MQTT connect failed, rc=
+156679: -2
+171726: Uptime: 00:02:51
+178677: MQTT connect failed, rc=
+178681: -2
+185677: MQTT connect failed, rc=
+185681: -2
+200728: Uptime: 00:03:20
+207679: MQTT connect failed, rc=
+207683: -2
+214681: MQTT connect failed, rc=
+214685: -2
+229723: Uptime: 00:03:49
+236685: MQTT connect failed, rc=
+236689: -2
+243686: MQTT connect failed, rc=
+243690: -2
+258737: Uptime: 00:04:18
+265688: MQTT connect failed, rc=
+265692: -2
+272690: MQTT connect failed, rc=
+272694: -2
+287741: Uptime: 00:04:47
+294693: MQTT connect failed, rc=
+294697: -2
+301693: MQTT connect failed, rc=
+301697: -2
+316744: Uptime: 00:05:16
+323695: MQTT connect failed, rc=
+323699: -2
+330697: MQTT connect failed, rc=
+330701: -2
+345748: Uptime: 00:05:45
+352700: MQTT connect failed, rc=
+352705: -2
+359700: MQTT connect failed, rc=
+359704: -2
+374751: Uptime: 00:06:14
+381702: MQTT connect failed, rc=
+381706: -2
+388704: MQTT connect failed, rc=
+388708: -2
+403755: Uptime: 00:06:43
+410707: MQTT connect failed, rc=
+410711: -2
+417707: MQTT connect failed, rc=
+417711: -2
+432758: Uptime: 00:07:12
+439709: MQTT connect failed, rc=
+439713: -2
+446711: MQTT connect failed, rc=
+446715: -2
+461762: Uptime: 00:07:41
+468715: MQTT connect failed, rc=
+468719: -2
+475715: MQTT connect failed, rc=
+475720: -2
+490767: Uptime: 00:08:10
+497717: MQTT connect failed, rc=
+497721: -2
+504719: MQTT connect failed, rc=
+504723: -2
+519770: Uptime: 00:08:39
+526722: MQTT connect failed, rc=
+526726: -2
+533722: MQTT connect failed, rc=
+533726: -2
+548773: Uptime: 00:09:08
+555724: MQTT connect failed, rc=
+555728: -2
+562726: MQTT connect failed, rc=
+562730: -2
+577777: Uptime: 00:09:37
+584729: MQTT connect failed, rc=
+584733: -2
+591729: MQTT connect failed, rc=
+591733: -2
+606780: Uptime: 00:10:06
+613731: MQTT connect failed, rc=
+613736: -2
+620733: MQTT connect failed, rc=
+620738: -2
+635785: Uptime: 00:10:35
+642736: MQTT connect failed, rc=
+642740: -2
+649736: MQTT connect failed, rc=
+649740: -2
+664787: Uptime: 00:11:04
+671738: MQTT connect failed, rc=
+671743: -2
+678740: MQTT connect failed, rc=
+678744: -2
+693791: Uptime: 00:11:33
+700743: MQTT connect failed, rc=
+700747: -2
+707743: MQTT connect failed, rc=
+707747: -2
+722794: Uptime: 00:12:02
+729745: MQTT connect failed, rc=
+729749: -2
+736747: MQTT connect failed, rc=
+736752: -2
+751799: Uptime: 00:12:31
+758750: MQTT connect failed, rc=
+758754: -2
+765750: MQTT connect failed, rc=
+765754: -2
+780801: Uptime: 00:13:00
+787752: MQTT connect failed, rc=
+787756: -2
+794754: MQTT connect failed, rc=
+794759: -2
+809806: Uptime: 00:13:29
+816757: MQTT connect failed, rc=
+816761: -2
+823757: MQTT connect failed, rc=
+823761: -2
+838808: Uptime: 00:13:58
+845759: MQTT connect failed, rc=
+845763: -2
+852761: MQTT connect failed, rc=
+852765: -2
+867812: Uptime: 00:14:27
+874765: MQTT connect failed, rc=
+874769: -2
+881765: MQTT connect failed, rc=
+881769: -2
+896816: Uptime: 00:14:56
+903767: MQTT connect failed, rc=
+903771: -2
+910769: MQTT connect failed, rc=
+910773: -2
+925820: Uptime: 00:15:25
+932772: MQTT connect failed, rc=
+932777: -2
+939772: MQTT connect failed, rc=
+939776: -2
+954823: Uptime: 00:15:54
+961774: MQTT connect failed, rc=
+961778: -2
+968776: MQTT connect failed, rc=
+968780: -2
+983827: Uptime: 00:16:23
+990779: MQTT connect failed, rc=
+990783: -2
+997779: MQTT connect failed, rc=
+997783: -2
+1012830: Uptime: 00:16:52
+1019781: MQTT connect failed, rc=
+1019785: -2
+1026783: MQTT connect failed, rc=
+1026787: -2
+1041834: Uptime: 00:17:21
+1048786: MQTT connect failed, rc=
+1048790: -2
+1055786: MQTT connect failed, rc=
+1055791: -2
+1070838: Uptime: 00:17:50
+1077788: MQTT connect failed, rc=
+1077792: -2
+1084790: MQTT connect failed, rc=
+1084794: -2
+1099841: Uptime: 00:18:19
+1106793: MQTT connect failed, rc=
+1106797: -2
+1113793: MQTT connect failed, rc=
+1113798: -2
+1128845: Uptime: 00:18:48
+1135795: MQTT connect failed, rc=
+1135799: -2
+1142797: MQTT connect failed, rc=
+1142801: -2
+1157848: Uptime: 00:19:17
+1164800: MQTT connect failed, rc=
+1164805: -2
+1171800: MQTT connect failed, rc=
+1171804: -2
+1186852: Uptime: 00:19:46
+1193802: MQTT connect failed, rc=
+1193806: -2
+1200804: MQTT connect failed, rc=
+1200808: -2
+1215855: Uptime: 00:20:15
+1222807: MQTT connect failed, rc=
+1222811: -2
+1229807: MQTT connect failed, rc=
+1229811: -2
+1244849: Uptime: 00:20:44
+1251809: MQTT connect failed, rc=
+1251813: -2
+1258811: MQTT connect failed, rc=
+1258815: -2
+1273862: Uptime: 00:21:13
+1280814: MQTT connect failed, rc=
+1280818: -2
+1287814: MQTT connect failed, rc=
+1287818: -2
+1302865: Uptime: 00:21:42
+1309816: MQTT connect failed, rc=
+1309820: -2
+1316818: MQTT connect failed, rc=
+1316822: -2
+1331869: Uptime: 00:22:11
+1338821: MQTT connect failed, rc=
+1338825: -2
+1345821: MQTT connect failed, rc=
+1345825: -2
+1360872: Uptime: 00:22:40
+1367825: MQTT connect failed, rc=
+1367830: -2
+1374827: MQTT connect failed, rc=
+1374831: -2
+1389878: Uptime: 00:23:09
+1396830: MQTT connect failed, rc=
+1396834: -2
+1403830: MQTT connect failed, rc=
+1403834: -2
+1418881: Uptime: 00:23:38
+1425832: MQTT connect failed, rc=
+1425837: -2
+1432834: MQTT connect failed, rc=
+1432838: -2
+1447885: Uptime: 00:24:07
+1454837: MQTT connect failed, rc=
+1454841: -2
+1461837: MQTT connect failed, rc=
+1461841: -2
+1476888: Uptime: 00:24:36
+1483839: MQTT connect failed, rc=
+1483843: -2
+1490841: MQTT connect failed, rc=
+1490845: -2
+1505892: Uptime: 00:25:05
+1512844: MQTT connect failed, rc=
+1512848: -2
+1519844: MQTT connect failed, rc=
+1519848: -2
+1534895: Uptime: 00:25:34
+1541846: MQTT connect failed, rc=
+1541850: -2
+1548848: MQTT connect failed, rc=
+1548853: -2
+5503: === Greenhouse app starting ===
+5507: Build: 
+5511: Thu Jan 15 21:16:24 2026
+10832: Connecting to WiFi '
+10836: Redmi 9T
+10840: '...
+10852: Static IP configured
+11064: .
+11271: .
+11478: .
+11685: .
+11892: .
+12099: .
+12307: .
+12514: .
+12721: .
+12928: .
+13135: .
+13342: .
+13549: .
+13756: .
+13963: .
+14170: .
+14377: .
+14584: .
+14791: .
+14998: .
+15205: .
+15412: .
+15619: .
+15826: .
+16033: .
+16240: .
+16447: .
+16654: .
+16861: .
+17068: .
+17275: .
+17482: .
+17689: .
+17896: .
+18104: .
+18311: .
+18518: .
+18725: .
+18932: .
+19139: .
+19346: .
+19553: .
+19760: .
+19967: .
+20174: .
+20381: .
+20588: .
+20795: .
+21002: .
+21209: .
+21416: .
+21623: .
+21830: .
+22037: .
+22244: .
+22451: .
+22658: .
+22865: .
+23072: .
+23279: .
+23486: .
+23693: .
+23900: .
+24107: .
+24314: .
+24521: .
+24728: .
+24935: .
+25142: .
+25349: .
+25556: .
+25763: .
+25970: .
+26177: .
+26384: .
+26591: .
+26798: .
+27005: .
+27212: .
+27419: .
+27626: .
+27833: .
+28040: .
+28247: .
+28454: .
+28661: .
+28868: .
+29075: .
+29282: .
+29489: .
+29697: .
+29904: .
+30111: .
+30318: .
+30525: .
+30732: .
+30939: .
+31146: .
+31353: .
+31561: .
+31768: .
+31975: .
+32182: .
+32389: .
+32596: .
+32803: .
+33010: .
+33217: .
+33424: .
+33631: .
+33838: .
+34045: .
+34252: .
+34459: .
+34666: .
+34873: .
+35080: .
+35287: .
+35494: .
+35701: .
+35908: .
+36115: .
+36322: .
+36529: .
+36736: .
+36943: .
+37150: .
+37357: .
+37564: .
+37771: .
+37978: .
+38185: .
+38392: .
+38599: .
+38806: .
+39013: .
+39220: .
+39427: .
+39634: .
+39841: .
+40048: .
+40255: .
+40462: .
+40669: .
+40876: .
+40881: WiFi connection failed (timeout)
+40890: Web server started on port 80
+40975: Initialization complete
+56022: Uptime: 00:00:56
+71061: Uptime: 00:01:11
+78076: MQTT connect failed, rc=
+78080: -2
+85095: MQTT connect failed, rc=
+85099: -2
+100146: Uptime: 00:01:40
+107161: MQTT connect failed, rc=
+107165: -2
+114180: MQTT connect failed, rc=
+114184: -2
+129231: Uptime: 00:02:09
+136246: MQTT connect failed, rc=
+136250: -2
+143266: MQTT connect failed, rc=
+143270: -2
+158317: Uptime: 00:02:38
+165332: MQTT connect failed, rc=
+165337: -2
+172352: MQTT connect failed, rc=
+172356: -2
+187403: Uptime: 00:03:07
+194417: MQTT connect failed, rc=
+194421: -2
+201436: MQTT connect failed, rc=
+201440: -2
+216487: Uptime: 00:03:36
+223502: MQTT connect failed, rc=
+223506: -2
+230521: MQTT connect failed, rc=
+230525: -2
+245572: Uptime: 00:04:05
+252587: MQTT connect failed, rc=
+252591: -2
+259606: MQTT connect failed, rc=
+259610: -2
+274657: Uptime: 00:04:34
+281671: MQTT connect failed, rc=
+281675: -2
+288690: MQTT connect failed, rc=
+288695: -2
+303742: Uptime: 00:05:03
+310757: MQTT connect failed, rc=
+310761: -2
+317776: MQTT connect failed, rc=
+317780: -2
+332827: Uptime: 00:05:32
+339842: MQTT connect failed, rc=
+339846: -2
+346861: MQTT connect failed, rc=
+346865: -2
+361913: Uptime: 00:06:01
+368928: MQTT connect failed, rc=
+368932: -2
+375947: MQTT connect failed, rc=
+375951: -2
+390998: Uptime: 00:06:30
+398013: MQTT connect failed, rc=
+398017: -2
+405032: MQTT connect failed, rc=
+405036: -2
+420083: Uptime: 00:07:00
+427098: MQTT connect failed, rc=
+427102: -2
+434117: MQTT connect failed, rc=
+434121: -2
+5561: === Greenhouse app starting ===
+5565: Build: 
+5570: Fri Jan 16 09:56:26 2026
+5672: Indoor DHT missing or read failed
+5676: Outdoor DHT missing or read failed
+10903: Connecting to WiFi '
+10907: Redmi 9T
+10912: '...
+10924: Static IP configured
+11135: .
+11139: WiFi connected, IP: 
+11144: 192.168.1.50
+11152: Web server started on port 80
+11238: Initialization complete
+21265: [BLUE] WiFi connected, IP: 192.168.1.50
+26293: Uptime: 00:00:26
+32638: MQTT connect failed, rc=
+32642: -2
+39638: MQTT connect failed, rc=
+39642: -2
+49669: [BLUE] WiFi connected, IP: 192.168.1.50
+54696: Uptime: 00:00:54
+61640: MQTT connect failed, rc=
+61644: -2
+68641: MQTT connect failed, rc=
+68646: -2
+78673: [BLUE] WiFi connected, IP: 192.168.1.50
+83700: Uptime: 00:01:23
+90643: MQTT connect failed, rc=
+90647: -2
+97643: MQTT connect failed, rc=
+97647: -2
+107674: [BLUE] WiFi connected, IP: 192.168.1.50
+112701: Uptime: 00:01:52
+119646: MQTT connect failed, rc=
+119651: -2
+126647: MQTT connect failed, rc=
+126651: -2
+136678: [BLUE] WiFi connected, IP: 192.168.1.50
+141705: Uptime: 00:02:21
+148650: MQTT connect failed, rc=
+148654: -2
+155651: MQTT connect failed, rc=
+155655: -2
+165682: [BLUE] WiFi connected, IP: 192.168.1.50
+170710: Uptime: 00:02:50
+177654: MQTT connect failed, rc=
+177658: -2
+184656: MQTT connect failed, rc=
+184660: -2
+5585: === Greenhouse app starting ===
+5589: Build: 
+5594: Fri Jan 16 09:56:26 2026
+5698: Indoor DHT missing or read failed
+5703: Outdoor DHT missing or read failed
+10926: Connecting to WiFi '
+10930: Redmi 9T
+10935: '...
+10947: Static IP configured
+11158: .
+11365: .
+11572: .
+11779: .
+11986: .
+12193: .
+12197: WiFi connected, IP: 
+12204: 192.168.1.50
+12210: Web server started on port 80
+12296: Initialization complete
+22323: [BLUE] WiFi connected, IP: 192.168.1.50
+27350: Uptime: 00:00:27
+33529: MQTT connect failed, rc=
+33533: -2
+40531: MQTT connect failed, rc=
+40535: -2
+50562: [BLUE] WiFi connected, IP: 192.168.1.50
+55590: Uptime: 00:00:55
+62534: MQTT connect failed, rc=
+62538: -2
+69534: MQTT connect failed, rc=
+69538: -2
+79565: [BLUE] WiFi connected, IP: 192.168.1.50
+84592: Uptime: 00:01:24
+91536: MQTT connect failed, rc=
+91540: -2
+98538: MQTT connect failed, rc=
+98543: -2
+108570: [BLUE] WiFi connected, IP: 192.168.1.50
+113597: Uptime: 00:01:53
+120541: MQTT connect failed, rc=
+120545: -2
+127541: MQTT connect failed, rc=
+127545: -2
+137572: [BLUE] WiFi connected, IP: 192.168.1.50
+142599: Uptime: 00:02:22
+149543: MQTT connect failed, rc=
+149547: -2
+156545: MQTT connect failed, rc=
+156549: -2
+166576: [BLUE] WiFi connected, IP: 192.168.1.50
+171603: Uptime: 00:02:51
+178548: MQTT connect failed, rc=
+178552: -2
+185548: MQTT connect failed, rc=
+185553: -2
+195580: [BLUE] WiFi connected, IP: 192.168.1.50
+200607: Uptime: 00:03:20
+207550: MQTT connect failed, rc=
+207554: -2
+214552: MQTT connect failed, rc=
+214556: -2
+224583: [BLUE] WiFi connected, IP: 192.168.1.50
+229610: Uptime: 00:03:49
+236555: MQTT connect failed, rc=
+236560: -2
+243555: MQTT connect failed, rc=
+243560: -2
+253586: [BLUE] WiFi connected, IP: 192.168.1.50
+258613: Uptime: 00:04:18
+265557: MQTT connect failed, rc=
+265561: -2
+272559: MQTT connect failed, rc=
+272563: -2
+282590: [BLUE] WiFi connected, IP: 192.168.1.50
+287618: Uptime: 00:04:47
+294562: MQTT connect failed, rc=
+294566: -2
+301562: MQTT connect failed, rc=
+301566: -2
+311593: [BLUE] WiFi connected, IP: 192.168.1.50
+316620: Uptime: 00:05:16
+323563: MQTT connect failed, rc=
+323568: -2
+330565: MQTT connect failed, rc=
+330569: -2
+340596: [BLUE] WiFi connected, IP: 192.168.1.50
+345623: Uptime: 00:05:45
+352569: MQTT connect failed, rc=
+352573: -2
+359569: MQTT connect failed, rc=
+359573: -2
+369600: [BLUE] WiFi connected, IP: 192.168.1.50
+374628: Uptime: 00:06:14
+381571: MQTT connect failed, rc=
+381575: -2
+388573: MQTT connect failed, rc=
+388577: -2
+5630: === Greenhouse app starting ===
+5634: Build: 
+5639: Fri Jan 16 09:57:53 2026
+5741: Indoor DHT missing or read failed
+5746: Outdoor DHT missing or read failed
+10970: Connecting to WiFi '
+10974: Redmi 9T
+10979: '...
+10991: Static IP configured
+11202: .
+11206: WiFi connected, IP: 
+11213: 192.168.1.50
+11219: Web server started on port 80
+11304: Initialization complete
+21332: [BLUE] WiFi connected, IP: 192.168.1.50
+26359: Uptime: 00:00:26
+33130: MQTT connect failed, rc=
+33134: -2
+40131: MQTT connect failed, rc=
+40136: -2
+50163: [BLUE] WiFi connected, IP: 192.168.1.50
+55190: Uptime: 00:00:55
+62134: MQTT connect failed, rc=
+62139: -2
+69134: MQTT connect failed, rc=
+69138: -2
+79165: [BLUE] WiFi connected, IP: 192.168.1.50
+84192: Uptime: 00:01:24
+91136: MQTT connect failed, rc=
+91140: -2
+98138: MQTT connect failed, rc=
+98142: -2
+108169: [BLUE] WiFi connected, IP: 192.168.1.50
+113197: Uptime: 00:01:53
+120141: MQTT connect failed, rc=
+120145: -2
+127141: MQTT connect failed, rc=
+127146: -2
+137173: [BLUE] WiFi connected, IP: 192.168.1.50
+142200: Uptime: 00:02:22
+149143: MQTT connect failed, rc=
+149147: -2
+156145: MQTT connect failed, rc=
+156150: -2
+166177: [BLUE] WiFi connected, IP: 192.168.1.50
+171204: Uptime: 00:02:51
+178148: MQTT connect failed, rc=
+178152: -2
+185148: MQTT connect failed, rc=
+185152: -2
+195179: [BLUE] WiFi connected, IP: 192.168.1.50
+200207: Uptime: 00:03:20
+207150: MQTT connect failed, rc=
+207154: -2
+214152: MQTT connect failed, rc=
+214156: -2
+224183: [BLUE] WiFi connected, IP: 192.168.1.50
+5658: === Greenhouse app starting ===
+5662: Build: 
+5667: Fri Jan 16 09:57:53 2026
+5770: Indoor DHT missing or read failed
+5775: Outdoor DHT missing or read failed
+11003: Connecting to WiFi '
+11007: Redmi 9T
+11012: '...
+11024: Static IP configured
+11235: .
+11442: .
+11649: .
+11856: .
+12063: .
+12270: .
+12274: WiFi connected, IP: 
+12281: 192.168.1.50
+12287: Web server started on port 80
+12373: Initialization complete
+22400: [BLUE] WiFi connected, IP: 192.168.1.50
+27427: Uptime: 00:00:27
+33977: MQTT connect failed, rc=
+33981: -2
+40979: MQTT connect failed, rc=
+40983: -2
+51010: [BLUE] WiFi connected, IP: 192.168.1.50
+56038: Uptime: 00:00:56
+62981: MQTT connect failed, rc=
+62985: -2
+69981: MQTT connect failed, rc=
+69985: -2
+80012: [BLUE] WiFi connected, IP: 192.168.1.50
+85039: Uptime: 00:01:25
+91983: MQTT connect failed, rc=
+91987: -2
+98985: MQTT connect failed, rc=
+98990: -2
+109017: [BLUE] WiFi connected, IP: 192.168.1.50
+114044: Uptime: 00:01:54
+120988: MQTT connect failed, rc=
+120993: -2
+127988: MQTT connect failed, rc=
+127992: -2
+138019: [BLUE] WiFi connected, IP: 192.168.1.50
+143046: Uptime: 00:02:23
+149990: MQTT connect failed, rc=
+149994: -2
+156992: MQTT connect failed, rc=
+156996: -2
+167023: [BLUE] WiFi connected, IP: 192.168.1.50
+172050: Uptime: 00:02:52
+178995: MQTT connect failed, rc=
+179000: -2
+185995: MQTT connect failed, rc=
+186000: -2
+196027: [BLUE] WiFi connected, IP: 192.168.1.50
+201054: Uptime: 00:03:21
+207997: MQTT connect failed, rc=
+208001: -2
+214999: MQTT connect failed, rc=
+215003: -2
+225030: [BLUE] WiFi connected, IP: 192.168.1.50
+230057: Uptime: 00:03:50
+237002: MQTT connect failed, rc=
+237007: -2
+244002: MQTT connect failed, rc=
+244006: -2
+254033: [BLUE] WiFi connected, IP: 192.168.1.50
+259060: Uptime: 00:04:19
+266005: MQTT connect failed, rc=
+266009: -2
+273007: MQTT connect failed, rc=
+273011: -2
+283039: [BLUE] WiFi connected, IP: 192.168.1.50
+288066: Uptime: 00:04:48
+295010: MQTT connect failed, rc=
+295014: -2
+302010: MQTT connect failed, rc=
+302014: -2
+312041: [BLUE] WiFi connected, IP: 192.168.1.50
+317068: Uptime: 00:05:17
+324012: MQTT connect failed, rc=
+324017: -2
+331014: MQTT connect failed, rc=
+331018: -2
+341045: [BLUE] WiFi connected, IP: 192.168.1.50
+346072: Uptime: 00:05:46
+353017: MQTT connect failed, rc=
+353021: -2
+360017: MQTT connect failed, rc=
+360021: -2
+370048: [BLUE] WiFi connected, IP: 192.168.1.50
+375076: Uptime: 00:06:15
+382019: MQTT connect failed, rc=
+382024: -2
+389021: MQTT connect failed, rc=
+389025: -2
+399052: [BLUE] WiFi connected, IP: 192.168.1.50
+404079: Uptime: 00:06:44
+411024: MQTT connect failed, rc=
+411028: -2
+418024: MQTT connect failed, rc=
+418028: -2
+428055: [BLUE] WiFi connected, IP: 192.168.1.50
+433082: Uptime: 00:07:13
+440026: MQTT connect failed, rc=
+440030: -2
+447028: MQTT connect failed, rc=
+447032: -2
+457059: [BLUE] WiFi connected, IP: 192.168.1.50
+462087: Uptime: 00:07:42
+469031: MQTT connect failed, rc=
+469035: -2
+476031: MQTT connect failed, rc=
+476035: -2
+486062: [BLUE] WiFi connected, IP: 192.168.1.50
+491089: Uptime: 00:08:11
+498033: MQTT connect failed, rc=
+498037: -2
+505035: MQTT connect failed, rc=
+505040: -2
+5715: === Greenhouse app starting ===
+5719: Build: 
+5724: Fri Jan 16 09:57:53 2026
+5827: Indoor DHT missing or read failed
+5831: Outdoor DHT missing or read failed
+11063: Connecting to WiFi '
+11067: Redmi 9T
+11072: '...
+11085: Static IP configured
+11296: .
+11503: .
+11710: .
+11917: .
+12124: .
+12331: .
+12335: WiFi connected, IP: 
+12342: 192.168.1.50
+12348: Web server started on port 80
+12433: Initialization complete
+22460: [BLUE] WiFi connected, IP: 192.168.1.50
+5723: === Greenhouse app starting ===
+5728: Build: 
+5734: Fri Jan 16 09:57:53 2026
+5836: Indoor DHT missing or read failed
+5840: Outdoor DHT missing or read failed
+11065: Connecting to WiFi '
+11070: Redmi 9T
+11076: '...
+11086: Static IP configured
+11296: .
+11503: .
+11710: .
+11917: .
+12124: .
+12331: .
+12335: WiFi connected, IP: 
+12342: 192.168.1.50
+12348: Web server started on port 80
+12434: Initialization complete
+22461: [BLUE] WiFi connected, IP: 192.168.1.50
+27488: Uptime: 00:00:27
+34265: MQTT connect failed, rc=
+34270: -2
+41265: MQTT connect failed, rc=
+41269: -2
+51296: [BLUE] WiFi connected, IP: 192.168.1.50
+56323: Uptime: 00:00:56
+63268: MQTT connect failed, rc=
+63272: -2
+70269: MQTT connect failed, rc=
+70273: -2
+80300: [BLUE] WiFi connected, IP: 192.168.1.50
+85328: Uptime: 00:01:25
+92272: MQTT connect failed, rc=
+92276: -2
+5739: === Greenhouse app starting ===
+5743: Build: 
+5748: Fri Jan 16 09:57:53 2026
+5852: Indoor DHT missing or read failed
+5856: Outdoor DHT missing or read failed
+11081: Connecting to WiFi '
+11086: Redmi 9T
+11092: '...
+11104: Static IP configured
+11313: .
+11520: .
+11727: .
+11934: .
+12141: .
+12348: .
+12352: WiFi connected, IP: 
+12359: 192.168.1.50
+12365: Web server started on port 80
+12450: Initialization complete
+22478: [BLUE] WiFi connected, IP: 192.168.1.50
+27505: Uptime: 00:00:27
+33927: MQTT connect failed, rc=
+33931: -2
+40927: MQTT connect failed, rc=
+40931: -2
+50958: [BLUE] WiFi connected, IP: 192.168.1.50
+55985: Uptime: 00:00:55
+62929: MQTT connect failed, rc=
+62934: -2
+69930: MQTT connect failed, rc=
+69934: -2
+79961: [BLUE] WiFi connected, IP: 192.168.1.50
+84988: Uptime: 00:01:24
+91933: MQTT connect failed, rc=
+91937: -2
+98933: MQTT connect failed, rc=
+98938: -2
+108964: [BLUE] WiFi connected, IP: 192.168.1.50
+113992: Uptime: 00:01:53
+120937: MQTT connect failed, rc=
+120941: -2
+127938: MQTT connect failed, rc=
+127942: -2
+137969: [BLUE] WiFi connected, IP: 192.168.1.50
+142996: Uptime: 00:02:22
+149941: MQTT connect failed, rc=
+149945: -2
+156941: MQTT connect failed, rc=
+156946: -2
+166973: [BLUE] WiFi connected, IP: 192.168.1.50
+172000: Uptime: 00:02:51
+178943: MQTT connect failed, rc=
+178947: -2
+185945: MQTT connect failed, rc=
+185949: -2
+195976: [BLUE] WiFi connected, IP: 192.168.1.50
+201003: Uptime: 00:03:20
+207948: MQTT connect failed, rc=
+207953: -2
+214948: MQTT connect failed, rc=
+214952: -2
+224979: [BLUE] WiFi connected, IP: 192.168.1.50
+230006: Uptime: 00:03:50
+236950: MQTT connect failed, rc=
+236955: -2
+243952: MQTT connect failed, rc=
+243957: -2
+253984: [BLUE] WiFi connected, IP: 192.168.1.50
+259011: Uptime: 00:04:19
+265955: MQTT connect failed, rc=
+265959: -2
+272955: MQTT connect failed, rc=
+272960: -2
+282987: [BLUE] WiFi connected, IP: 192.168.1.50
+288014: Uptime: 00:04:48
+294957: MQTT connect failed, rc=
+294962: -2
+301959: MQTT connect failed, rc=
+301964: -2
+311990: [BLUE] WiFi connected, IP: 192.168.1.50
+317017: Uptime: 00:05:17
+323962: MQTT connect failed, rc=
+323966: -2
+330962: MQTT connect failed, rc=
+330966: -2
+5778: === Greenhouse app starting ===
+5783: Build: 
+5789: Fri Jan 16 09:57:53 2026
+5891: Indoor DHT missing or read failed
+5896: Outdoor DHT missing or read failed
+11119: Connecting to WiFi '
+11124: Redmi 9T
+11130: '...
+11140: Static IP configured
+11351: .
+11356: WiFi connected, IP: 
+11363: 192.168.1.50
+11368: Web server started on port 80
+11454: Initialization complete
+21481: [BLUE] WiFi connected, IP: 192.168.1.50
+26508: Uptime: 00:00:26
+33428: MQTT connect failed, rc=
+33432: -2
+40428: MQTT connect failed, rc=
+40433: -2
+50460: [BLUE] WiFi connected, IP: 192.168.1.50
+55487: Uptime: 00:00:55
+62430: MQTT connect failed, rc=
+62435: -2
+69432: MQTT connect failed, rc=
+69436: -2
+79463: [BLUE] WiFi connected, IP: 192.168.1.50
+5791: === Greenhouse app starting ===
+5836: Build: 
+5880: Fri Jan 16 09:57:53 2026
+6021: Indoor DHT missing or read failed
+6065: Outdoor DHT missing or read failed
+11328: Connecting to WiFi '
+11372: Redmi 9T
+11416: '...
+11465: Static IP configured
+11714: .
+11960: .
+12206: .
+12453: .
+12700: .
+12744: WiFi connected, IP: 
+12788: 192.168.1.50
+12834: Web server started on port 80
+12959: Initialization complete
+23026: [BLUE] WiFi connected, IP: 192.168.1.50
+28093: Uptime: 00:00:28
+34442: MQTT connect failed, rc=
+34486: -2
+41442: MQTT connect failed, rc=
+41487: -2
+51553: [BLUE] WiFi connected, IP: 192.168.1.50
+56620: Uptime: 00:00:56
+63444: MQTT connect failed, rc=
+63488: -2
+70444: MQTT connect failed, rc=
+70488: -2
+80555: [BLUE] WiFi connected, IP: 192.168.1.50
+85622: Uptime: 00:01:25
+92447: MQTT connect failed, rc=
+92491: -2
+99447: MQTT connect failed, rc=
+99491: -2
+109557: [BLUE] WiFi connected, IP: 192.168.1.50
+114624: Uptime: 00:01:54
+121450: MQTT connect failed, rc=
+121494: -2
+128451: MQTT connect failed, rc=
+128495: -2
+138563: [BLUE] WiFi connected, IP: 192.168.1.50
+143630: Uptime: 00:02:23
+150454: MQTT connect failed, rc=
+150498: -2
+157454: MQTT connect failed, rc=
+157498: -2
+167565: [BLUE] WiFi connected, IP: 192.168.1.50
+172632: Uptime: 00:02:52
+179456: MQTT connect failed, rc=
+179501: -2
+186459: MQTT connect failed, rc=
+186503: -2
+196569: [BLUE] WiFi connected, IP: 192.168.1.50
+201638: Uptime: 00:03:21
+208461: MQTT connect failed, rc=
+208505: -2
+215461: MQTT connect failed, rc=
+215505: -2
+225573: [BLUE] WiFi connected, IP: 192.168.1.50
+230640: Uptime: 00:03:50
+237463: MQTT connect failed, rc=
+237507: -2
+244465: MQTT connect failed, rc=
+244509: -2
+5895: === Greenhouse app starting ===
+5939: Build: 
+5983: Fri Jan 16 09:57:53 2026
+6124: Indoor DHT missing or read failed
+6169: Outdoor DHT missing or read failed
+11437: Connecting to WiFi '
+11481: Redmi 9T
+11525: '...
+11576: Static IP configured
+11826: .
+12072: .
+12318: .
+12565: .
+12811: .
+12855: WiFi connected, IP: 
+12899: 192.168.1.50
+12945: Web server started on port 80
+13071: Initialization complete
+23137: [BLUE] WiFi connected, IP: 192.168.1.50
+28204: Uptime: 00:00:28
+34484: MQTT connect failed, rc=
+34528: -2
+41484: MQTT connect failed, rc=
+41528: -2
+51594: [BLUE] WiFi connected, IP: 192.168.1.50
+56661: Uptime: 00:00:56
+63486: MQTT connect failed, rc=
+63530: -2
+70486: MQTT connect failed, rc=
+70531: -2
+80597: [BLUE] WiFi connected, IP: 192.168.1.50
+85664: Uptime: 00:01:25
+92489: MQTT connect failed, rc=
+92533: -2
+99489: MQTT connect failed, rc=
+99534: -2
+109601: [BLUE] WiFi connected, IP: 192.168.1.50
+114668: Uptime: 00:01:54
+121492: MQTT connect failed, rc=
+121536: -2
+128493: MQTT connect failed, rc=
+128537: -2
+138604: [BLUE] WiFi connected, IP: 192.168.1.50
+143671: Uptime: 00:02:23
+150496: MQTT connect failed, rc=
+150540: -2
+157496: MQTT connect failed, rc=
+157541: -2
+167608: [BLUE] WiFi connected, IP: 192.168.1.50
+172676: Uptime: 00:02:52
+179499: MQTT connect failed, rc=
+179543: -2
+186502: MQTT connect failed, rc=
+186546: -2
+196613: [BLUE] WiFi connected, IP: 192.168.1.50
+201681: Uptime: 00:03:21
+208504: MQTT connect failed, rc=
+208549: -2
+215505: MQTT connect failed, rc=
+215549: -2
+225615: [BLUE] WiFi connected, IP: 192.168.1.50
+230684: Uptime: 00:03:50
+237507: MQTT connect failed, rc=
+237552: -2
+5924: === Greenhouse app starting ===
+5968: Build: 
+6012: Fri Jan 16 09:57:53 2026
+6153: Indoor DHT missing or read failed
+6197: Outdoor DHT missing or read failed
+11462: Connecting to WiFi '
+11507: Redmi 9T
+11551: '...
+11602: Static IP configured
+11851: .
+12097: .
+12343: .
+12590: .
+12836: .
+12881: WiFi connected, IP: 
+12925: 192.168.1.50
+12971: Web server started on port 80
+13096: Initialization complete
+23162: [BLUE] WiFi connected, IP: 192.168.1.50
+28229: Uptime: 00:00:28
+34420: MQTT connect failed, rc=
+34465: -2
+41420: MQTT connect failed, rc=
+41464: -2
+51530: [BLUE] WiFi connected, IP: 192.168.1.50
+56597: Uptime: 00:00:56
+63421: MQTT connect failed, rc=
+63466: -2
+70421: MQTT connect failed, rc=
+70465: -2
+80531: [BLUE] WiFi connected, IP: 192.168.1.50
+85598: Uptime: 00:01:25
+92424: MQTT connect failed, rc=
+92469: -2
+99425: MQTT connect failed, rc=
+99469: -2
+109536: [BLUE] WiFi connected, IP: 192.168.1.50
+114603: Uptime: 00:01:54
+121428: MQTT connect failed, rc=
+121473: -2
+128428: MQTT connect failed, rc=
+128473: -2
+138540: [BLUE] WiFi connected, IP: 192.168.1.50
+143607: Uptime: 00:02:23
+150430: MQTT connect failed, rc=
+150475: -2
+157432: MQTT connect failed, rc=
+157476: -2
+167543: [BLUE] WiFi connected, IP: 192.168.1.50
+172610: Uptime: 00:02:52
+179435: MQTT connect failed, rc=
+179479: -2
+186436: MQTT connect failed, rc=
+186481: -2
+196548: [BLUE] WiFi connected, IP: 192.168.1.50
+201615: Uptime: 00:03:21
+208438: MQTT connect failed, rc=
+208483: -2
+5950: === Greenhouse app starting ===
+5995: Build: 
+6039: Fri Jan 16 09:57:53 2026
+6181: Indoor DHT missing or read failed
+6225: Outdoor DHT missing or read failed
+11490: Connecting to WiFi '
+11534: Redmi 9T
+11578: '...
+11630: Static IP configured
+11880: .
+12128: .
+12375: .
+12623: .
+12869: .
+12913: WiFi connected, IP: 
+12958: 192.168.1.50
+13004: Web server started on port 80
+13129: Initialization complete
+23197: [BLUE] WiFi connected, IP: 192.168.1.50
+28264: Uptime: 00:00:28
+34636: MQTT connect failed, rc=
+34681: -2
+41636: MQTT connect failed, rc=
+41681: -2
+51747: [BLUE] WiFi connected, IP: 192.168.1.50
+56814: Uptime: 00:00:56
+63639: MQTT connect failed, rc=
+63683: -2
+70640: MQTT connect failed, rc=
+70685: -2
+80751: [BLUE] WiFi connected, IP: 192.168.1.50
+85818: Uptime: 00:01:25
+92643: MQTT connect failed, rc=
+92687: -2
+99643: MQTT connect failed, rc=
+99687: -2
+109753: [BLUE] WiFi connected, IP: 192.168.1.50
+114820: Uptime: 00:01:54
+121646: MQTT connect failed, rc=
+121691: -2
+128647: MQTT connect failed, rc=
+128692: -2
+138758: [BLUE] WiFi connected, IP: 192.168.1.50
+143825: Uptime: 00:02:23
+150650: MQTT connect failed, rc=
+150694: -2
+157650: MQTT connect failed, rc=
+157695: -2
+167761: [BLUE] WiFi connected, IP: 192.168.1.50
+172828: Uptime: 00:02:52
+179652: MQTT connect failed, rc=
+179697: -2
+186654: MQTT connect failed, rc=
+186698: -2
+196764: [BLUE] WiFi connected, IP: 192.168.1.50
+201831: Uptime: 00:03:21
+208657: MQTT connect failed, rc=
+208701: -2
+215657: MQTT connect failed, rc=
+215702: -2
+225770: [BLUE] WiFi connected, IP: 192.168.1.50
+230837: Uptime: 00:03:50
+237659: MQTT connect failed, rc=
+237704: -2
+244661: MQTT connect failed, rc=
+244706: -2
+254773: [BLUE] WiFi connected, IP: 192.168.1.50
+259840: Uptime: 00:04:19
+266664: MQTT connect failed, rc=
+266709: -2
+273665: MQTT connect failed, rc=
+273710: -2
+283777: [BLUE] WiFi connected, IP: 192.168.1.50
+288845: Uptime: 00:04:48
+295666: MQTT connect failed, rc=
+295711: -2
+302669: MQTT connect failed, rc=
+302714: -2
+312781: [BLUE] WiFi connected, IP: 192.168.1.50
+317849: Uptime: 00:05:17
+324672: MQTT connect failed, rc=
+324716: -2
+331672: MQTT connect failed, rc=
+331717: -2
+341783: [BLUE] WiFi connected, IP: 192.168.1.50
+346852: Uptime: 00:05:46
+353673: MQTT connect failed, rc=
+353719: -2
+360676: MQTT connect failed, rc=
+360721: -2
+370788: [BLUE] WiFi connected, IP: 192.168.1.50
+375855: Uptime: 00:06:15
+382677: MQTT connect failed, rc=
+382721: -2
+389677: MQTT connect failed, rc=
+389722: -2
+399788: [BLUE] WiFi connected, IP: 192.168.1.50
+404855: Uptime: 00:06:44
+411679: MQTT connect failed, rc=
+411724: -2
+418681: MQTT connect failed, rc=
+418726: -2
+428792: [BLUE] WiFi connected, IP: 192.168.1.50
+433859: Uptime: 00:07:13
+440684: MQTT connect failed, rc=
+440728: -2
+447684: MQTT connect failed, rc=
+447730: -2
+457796: [BLUE] WiFi connected, IP: 192.168.1.50
+462863: Uptime: 00:07:42
+469686: MQTT connect failed, rc=
+469731: -2
+476688: MQTT connect failed, rc=
+476733: -2
+486799: [BLUE] WiFi connected, IP: 192.168.1.50
+491866: Uptime: 00:08:11
+498691: MQTT connect failed, rc=
+498735: -2
+505691: MQTT connect failed, rc=
+505736: -2
+515803: [BLUE] WiFi connected, IP: 192.168.1.50
+520870: Uptime: 00:08:40
+527693: MQTT connect failed, rc=
+527738: -2
+534695: MQTT connect failed, rc=
+534740: -2
+544806: [BLUE] WiFi connected, IP: 192.168.1.50
+549874: Uptime: 00:09:09
+556698: MQTT connect failed, rc=
+556742: -2
+563698: MQTT connect failed, rc=
+563743: -2
+6011: === Greenhouse app starting ===
+6055: Build: 
+6099: Fri Jan 16 09:57:53 2026
+6242: Indoor DHT missing or read failed
+6286: Outdoor DHT missing or read failed
+11606: Connecting to WiFi '
+11650: Redmi 9T
+11694: '...
+11746: Static IP configured
+11995: .
+12241: .
+12487: .
+12734: .
+12981: .
+13025: WiFi connected, IP: 
+13070: 192.168.1.50
+13118: Web server started on port 80
+13244: Initialization complete
+23311: [BLUE] WiFi connected, IP: 192.168.1.50
+28379: Uptime: 00:00:28
+34856: MQTT connect failed, rc=
+34901: -2
+41857: MQTT connect failed, rc=
+41901: -2
+51969: [BLUE] WiFi connected, IP: 192.168.1.50
+57037: Uptime: 00:00:56
+63860: MQTT connect failed, rc=
+63904: -2
+70860: MQTT connect failed, rc=
+70905: -2
+80972: [BLUE] WiFi connected, IP: 192.168.1.50
+86039: Uptime: 00:01:25
+92862: MQTT connect failed, rc=
+92908: -2
+99864: MQTT connect failed, rc=
+99909: -2
+109975: [BLUE] WiFi connected, IP: 192.168.1.50
+115042: Uptime: 00:01:55
+121867: MQTT connect failed, rc=
+121911: -2
+128867: MQTT connect failed, rc=
+128912: -2
+138978: [BLUE] WiFi connected, IP: 192.168.1.50
+144046: Uptime: 00:02:24
+150869: MQTT connect failed, rc=
+150914: -2
+157871: MQTT connect failed, rc=
+157916: -2
+167982: [BLUE] WiFi connected, IP: 192.168.1.50
+173049: Uptime: 00:02:53
+179874: MQTT connect failed, rc=
+179918: -2
+186874: MQTT connect failed, rc=
+186921: -2
+196987: [BLUE] WiFi connected, IP: 192.168.1.50
+202054: Uptime: 00:03:22
+208876: MQTT connect failed, rc=
+208921: -2
+215878: MQTT connect failed, rc=
+215923: -2
+225989: [BLUE] WiFi connected, IP: 192.168.1.50
+231056: Uptime: 00:03:51
+237881: MQTT connect failed, rc=
+237925: -2
+244881: MQTT connect failed, rc=
+244926: -2
+254993: [BLUE] WiFi connected, IP: 192.168.1.50
+260060: Uptime: 00:
