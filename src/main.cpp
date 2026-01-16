@@ -92,6 +92,9 @@ void setup() {
   logPrintln(String("Initialization complete"));
 }
 
+// forward declaration already present; ensure declaration before use
+static void wifiStatusPrintTick();
+
 void loop() {
   static unsigned long lastColor = 0;
   static uint8_t colorIndex = 0; // 0=red,1=green,2=blue
@@ -110,6 +113,9 @@ void loop() {
   relaysTick();
   // automation tick
   automationTick();
+
+  // Print WiFi status periodically (matches LED color logic)
+  wifiStatusPrintTick();
 
   // Cycle RGB every COLOR_INTERVAL
     // (LED now used as WiFi status indicator; color cycling removed)
@@ -165,3 +171,35 @@ void loop() {
   mqttEnsureConnected();
   if (_mqttClient.connected()) _mqttClient.loop();
 }
+
+// Print WiFi status every 3 seconds using the same color-logic as the RGB LED
+static unsigned long _wifiStatusLastPrint = 0;
+static void wifiStatusPrintTick() {
+  unsigned long now = millis();
+  if (now - _wifiStatusLastPrint < 3000) return;
+  _wifiStatusLastPrint = now;
+  if (WiFi.status() == WL_CONNECTED) {
+    String msg = String("[BLUE] WiFi connected, IP: ") + WiFi.localIP().toString();
+    Serial.println(msg);
+    logPrintln(msg);
+    setPixelColorRGB(0, 0, 255);
+  } else {
+    // if an SSID is configured we assume it's attempting to connect (green),
+    // otherwise it's effectively disconnected (red)
+    String ssid = WiFi.SSID();
+    if (ssid.length() > 0) {
+      String msg = String("[GREEN] WiFi connecting to '") + ssid + "'...";
+      Serial.println(msg);
+      logPrintln(msg);
+      setPixelColorRGB(0, 255, 0);
+    } else {
+      String msg = String("[RED] WiFi disconnected");
+      Serial.println(msg);
+      logPrintln(msg);
+      setPixelColorRGB(255, 0, 0);
+    }
+  }
+}
+
+// forward declaration for wifi status ticker (defined later)
+static void wifiStatusPrintTick();

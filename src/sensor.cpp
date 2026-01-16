@@ -1,5 +1,6 @@
 #include "sensor.h"
 #include "pins.h"
+#include "logging.h"
 #include <DHTesp.h>
 
 static DHTesp dht_in;
@@ -21,7 +22,20 @@ void sensorBegin() {
   h = dht_out.getHumidity();
   if (!isnan(t)) lastOutTemp = t;
   if (!isnan(h)) lastOutHum = h;
+
+  // Log sensor presence/absence for diagnostics
+  if (isnan(lastInTemp) || isnan(lastInHum)) {
+    Serial.println("[WARN] Indoor DHT sensor not responding or disconnected");
+    appendLog(String("Indoor DHT missing or read failed"));
+  }
+  if (isnan(lastOutTemp) || isnan(lastOutHum)) {
+    Serial.println("[WARN] Outdoor DHT sensor not responding or disconnected");
+    appendLog(String("Outdoor DHT missing or read failed"));
+  }
 }
+
+// Log sensor presence on startup if readings are missing
+  
 
 float readTemperatureC(bool outside) {
   if (outside) {
@@ -53,8 +67,14 @@ String sensorJson() {
   float tout = readTemperatureC(true);
   float hout = readHumidity(true);
   String s = "{";
-  s += "\"in\":{\"temp\":" + String(tin,2) + ",\"hum\":" + String(hin,2) + "},";
-  s += "\"out\":{\"temp\":" + String(tout,2) + ",\"hum\":" + String(hout,2) + "}";
+  s += "\"in\":{";
+  if (isnan(tin)) s += "\"temp\":null,"; else s += "\"temp\":" + String(tin,2) + ",";
+  if (isnan(hin)) s += "\"hum\":null"; else s += "\"hum\":" + String(hin,2);
+  s += "},";
+  s += "\"out\":{";
+  if (isnan(tout)) s += "\"temp\":null,"; else s += "\"temp\":" + String(tout,2) + ",";
+  if (isnan(hout)) s += "\"hum\":null"; else s += "\"hum\":" + String(hout,2);
+  s += "}";
   s += "}";
   return s;
 }
