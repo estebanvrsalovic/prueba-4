@@ -20,6 +20,8 @@
 // LED module
 #include "led.h"
 #include "serial_utils.h"
+#include "serial_cmds.h"
+#include "serial_probe.h"
 
 // MQTT globals
 static WiFiClientSecure _wifiClient;
@@ -120,6 +122,11 @@ void setup() {
   // start scheduler (loads schedules from SPIFFS)
   schedulerBegin();
 
+  // Serial command handler
+  serialCmdsBegin();
+  // Serial probe (diagnostic)
+  serialProbeBegin();
+
   // MQTT init
   // Allow insecure TLS (skip cert validation) for public broker demonstration
   _wifiClient.setInsecure();
@@ -136,6 +143,12 @@ void loop() {
   static unsigned long lastColor = 0;
   static uint8_t colorIndex = 0; // 0=red,1=green,2=blue
   unsigned long now = millis();
+  // Periodic diagnostic heartbeat to help verify serial output
+  static unsigned long _diagLast = 0;
+  if (now - _diagLast >= 5000) {
+    _diagLast = now;
+    if (Serial) Serial.println("DIAG: alive");
+  }
 
   // Handle web requests frequently
   webHandle();
@@ -207,6 +220,11 @@ void loop() {
   // MQTT background maintenance (reconnect / loop)
   mqttEnsureConnected();
   if (_mqttClient.connected()) _mqttClient.loop();
+
+  // serial command processing (reads Serial / Serial1)
+  serialCmdsLoop();
+  // serial probe loop (prints periodic probe messages)
+  serialProbeLoop();
 }
 
 // Print WiFi status every 3 seconds using the same color-logic as the RGB LED
