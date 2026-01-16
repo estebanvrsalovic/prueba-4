@@ -7,6 +7,7 @@
 #include "thermostat.h"
 #include "automation.h"
 #include "led.h"
+#include "serial_utils.h"
 
 static WiFiServer server(80);
 // Telnet-like server for remote serial log viewing
@@ -285,6 +286,22 @@ loadThermostat();
       return;
     }
 
+  // Direct download of logs file
+  if (path.startsWith("/logs") || path.startsWith("/logs.txt")) {
+    if (SPIFFS.exists("/logs.txt")) {
+      File f = SPIFFS.open("/logs.txt", "r");
+      if (f) {
+        client.print("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n");
+        client.print("Connection: close\r\n\r\n");
+        while (f.available()) client.write(f.read());
+        f.close();
+        return;
+      }
+    }
+    sendResponse(client, "text/plain", String("No logs"));
+    return;
+  }
+
   // /relay?ch=1&state=on  or /status
   if (path.startsWith("/relay")) {
     int q = path.indexOf('?');
@@ -383,6 +400,23 @@ loadThermostat();
         }
       }
       String nf = "No log";
+      sendResponse(client, "text/plain", nf);
+      return;
+    }
+
+    // Allow downloading the general logs file
+    if (action == "download_logs") {
+      if (SPIFFS.exists("/logs.txt")) {
+        File f = SPIFFS.open("/logs.txt", "r");
+        if (f) {
+          client.print("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n");
+          client.print("Connection: close\r\n\r\n");
+          while (f.available()) client.write(f.read());
+          f.close();
+          return;
+        }
+      }
+      String nf = "No logs";
       sendResponse(client, "text/plain", nf);
       return;
     }
@@ -534,10 +568,10 @@ loadThermostat();
 
 void webBegin() {
   WiFi.mode(WIFI_STA);
-  Serial.print("Connecting to WiFi '"); Serial.print(WIFI_SSID); Serial.println("'...");
+  logPrint(String("Connecting to WiFi '")); logPrint(String(WIFI_SSID)); logPrintln(String("'..."));
   // Configure static IP if defined in config.h
   if (WiFi.config(STATIC_IP, STATIC_GATEWAY, STATIC_SUBNET, STATIC_DNS)) {
-    Serial.println("Static IP configured");
+    logPrintln(String("Static IP configured"));
   }
   WiFi.begin(WIFI_SSID, WIFI_PASS);
   unsigned long start = millis();
@@ -553,22 +587,21 @@ void webBegin() {
       else setPixelColorRGB(0, 0, 0);
     }
     delay(200);
-    Serial.print('.');
+    logPrint(String("."));
   }
   Serial.println();
   if (WiFi.status() == WL_CONNECTED) {
-    Serial.print("WiFi connected, IP: ");
-    Serial.println(WiFi.localIP());
+    logPrint(String("WiFi connected, IP: ")); logPrintln(WiFi.localIP().toString());
     // solid blue when connected
     setPixelColorRGB(0, 0, 255);
   } else {
-    Serial.println("WiFi connection failed (timeout)");
+    logPrintln(String("WiFi connection failed (timeout)"));
     // solid red on failure
     setPixelColorRGB(255, 0, 0);
   }
   server.begin();
   telnetServer.begin();
-  Serial.println("Web server started on port 80");
+  logPrintln(String("Web server started on port 80"));
 }
 
 void webHandle() {

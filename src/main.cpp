@@ -17,6 +17,7 @@
 // NeoPixel config
 // LED module
 #include "led.h"
+#include "serial_utils.h"
 
 // MQTT globals
 static WiFiClient _wifiClient;
@@ -36,9 +37,9 @@ static void mqttEnsureConnected() {
   String clientId = "gh-" + WiFi.macAddress();
   clientId.replace(":", "");
   if (_mqttClient.connect(clientId.c_str())) {
-    Serial.println("MQTT connected");
+    logPrintln(String("MQTT connected"));
   } else {
-    Serial.print("MQTT connect failed, rc="); Serial.println(_mqttClient.state());
+    logPrint(String("MQTT connect failed, rc=")); logPrintln(String(_mqttClient.state()));
   }
 }
 
@@ -47,10 +48,27 @@ void setup() {
   // start a secondary UART (Serial1) on configurable pins
   Serial1.begin(9600, SERIAL_8N1, SERIAL1_RX_PIN, SERIAL1_TX_PIN);
   unsigned long start = millis();
-  while (!Serial && (millis() - start) < 2000UL) delay(10);
+  // Allow more time for USB CDC enumeration on some hosts
+  while (!Serial && (millis() - start) < 5000UL) delay(10);
 
+  // Temporary debug: confirm Serial is available and app started
   Serial.println("=== Greenhouse app starting ===");
-  Serial.print("Build: "); Serial.println(__TIMESTAMP__);
+  Serial.flush();
+
+  // Initialize SPIFFS logging
+  initLogging();
+  // If there are stored logs from previous runs, print them once on boot
+  {
+    String stored = readLogs();
+    if (stored.length() > 0) {
+      Serial.println("=== STORED LOGS BEGIN ===");
+      Serial.println(stored);
+      Serial.println("=== STORED LOGS END ===");
+    }
+  }
+
+  logPrintln(String("=== Greenhouse app starting ==="));
+  logPrint(String("Build: ")); logPrintln(String(__TIMESTAMP__));
 
   // Start NeoPixel
     // Initialize LED
@@ -71,7 +89,7 @@ void setup() {
   // MQTT init
   _mqttClient.setServer(MQTT_SERVER, MQTT_PORT);
 
-  Serial.println("Initialization complete");
+  logPrintln(String("Initialization complete"));
 }
 
 void loop() {
@@ -108,9 +126,7 @@ void loop() {
       char buf[64];
       strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", &timeinfo);
       String out = String("Hora: ") + buf;
-      Serial.println(out);
-      webBroadcast(out);
-      Serial1.println(out);
+      logPrintln(out);
       // publish to MQTT
       mqttEnsureConnected();
       if (_mqttClient.connected()) {
@@ -126,9 +142,7 @@ void loop() {
       char ubuf[32];
       snprintf(ubuf, sizeof(ubuf), "Uptime: %02lu:%02lu:%02lu", hh, mm, ss);
       String out = String(ubuf);
-      Serial.println(out);
-      webBroadcast(out);
-      Serial1.println(out);
+      logPrintln(out);
       // publish uptime to MQTT when NTP unavailable
       mqttEnsureConnected();
       if (_mqttClient.connected()) {
