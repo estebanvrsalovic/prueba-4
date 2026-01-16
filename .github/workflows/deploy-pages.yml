@@ -2,8 +2,8 @@ name: Deploy docs to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
-  workflow_dispatch:
+    branches:
+      - master
 
 jobs:
   upload:
@@ -12,10 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload `docs` artifact for Pages
+      - name: Upload docs artifact for Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./docs
+          path: docs
 
   deploy:
     needs: upload
