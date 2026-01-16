@@ -143,11 +143,13 @@ void loop() {
   static unsigned long lastColor = 0;
   static uint8_t colorIndex = 0; // 0=red,1=green,2=blue
   unsigned long now = millis();
-  // Periodic diagnostic heartbeat to help verify serial output
+  // Periodic diagnostic heartbeat to help verify serial output (every 1s)
   static unsigned long _diagLast = 0;
-  if (now - _diagLast >= 5000) {
+  if (now - _diagLast >= 1000) {
     _diagLast = now;
     if (Serial) Serial.println("DIAG: alive");
+    if (Serial1) Serial1.println("DIAG: alive");
+    logPrintln(String("DIAG: alive"));
   }
 
   // Handle web requests frequently
